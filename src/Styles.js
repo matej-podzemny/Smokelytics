@@ -9,12 +9,16 @@ export default StyleSheet.create({
     fontWeight: "300",
     fontSize: fontAutoSize,
     color: 'white',
-
+    fontFamily: 'nunito-bold',
+  },
+  header: {
+    backgroundColor: 'rgba(178,32,20,1)',
   },
   container: {
     flex: 1,
     backgroundColor: "#093145",
     alignItems: 'center',
+    justifyContent: 'center',
   },
   screen: {
     flex: 1,

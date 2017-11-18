@@ -7,14 +7,24 @@ import reducers from './reducers';
 import { createStore, applyMiddleware } from 'redux';
 import HomeScreen from './screens/HomeScreen';
 import SummaryScreen from './screens/SummaryScreen';
+import { Font } from 'expo';
+
 
 export default class App extends React.Component {
 
-  // componentDidMount() {
-  //   Font.loadAsync({
-  //     'Roboto-Light': require('./assets/fonts/Roboto-Light.ttf'),
-  //   });
-  // }
+  state = {
+    fontLoaded: false,
+  };
+
+  async componentDidMount() {
+  await Font.loadAsync({
+    'nunito-bold': require('./assets/fonts/Nunito-Bold.ttf'),
+  });
+
+  this.setState({ fontLoaded: true });
+}
+
+
 
   render() {
     const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
@@ -25,13 +35,26 @@ export default class App extends React.Component {
       },
       Summary: {
         screen: SummaryScreen,
+        // navigationOptions: ({navigation}) => ({
+        //   title: `${navigation.state.params.name}'s Profile'`,
+        // }),
       },
     });
 
-    return (
-      <Provider store={store}>
-        <RootNavigator />
-      </Provider>
-    );
+
+    if (this.state.fontLoaded) {
+      return (
+        <Provider store={store}>
+
+              <RootNavigator />
+
+        </Provider>
+      );
+    } else {
+      return null;
+    }
+
+
+
   }
 }

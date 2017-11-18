@@ -1,24 +1,45 @@
-import React, { Component } from 'react';
-import { Text, View, Dimensions, StyleSheet } from 'react-native';
+import React, {Component} from 'react';
+import {Text, View, Dimensions, StyleSheet, Image} from 'react-native';
 import styles from '../src/Styles';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
+import { Container, Header, Left, Body, Right, Button, Icon, Title, Content } from 'native-base';
 
 
-
-
-class HomeScreen extends Component {
-
+class SummaryScreen extends Component {
+  static navigationOptions = {
+    header: null
+  };
 
   render() {
-    const { navigate } = this.props.navigation;
+    const {navigate, goBack} = this.props.navigation;
+
     return (
-      <View style={styles.container}>
-        <Text style={styles.text}>SummaryScreen</Text>
-      </View>
-    );
+      <Container>
+      <Header style={styles.header}>
+        <Left>
+          <Button
+            style={{ paddingLeft: 0, backgroundColor: 'transparent' }}
+            onPress={() => { goBack() }}
+            iconRight
+            //iconLeft
+            >
+            <Icon ios='ios-arrow-back' android="md-arrow-back" style={{ color: 'white' }}/>
+            <Text style={{ color: 'white', fontFamily: 'nunito-bold' }}>back</Text>
+          </Button>
+        </Left>
+        <Body />
+        <Right />
+      </Header>
+      <Content>
+   <Text style={styles.text}>
+     STAAAATS!
+   </Text>
+ </Content>
+
+    </Container>
+  );
   }
 }
-
 
 const mapStateToProps = ({counter}) => {
   const {points} = counter;
@@ -26,4 +47,4 @@ const mapStateToProps = ({counter}) => {
   return {points};
 };
 
-export default connect(mapStateToProps)(HomeScreen);
+export default connect(mapStateToProps)(SummaryScreen);
