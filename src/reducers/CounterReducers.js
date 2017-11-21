@@ -1,21 +1,33 @@
-import { INCREMENT, DECREMENT } from '../actions/types';
+import { INCREMENT, DECREMENT, RESET } from '../actions/types';
 
 const INITIAL_STATE = {
-  points: 0,
+  cigSmokedTotal: 0,
+  cigSmoked: 0,
+  cigLeft: 20,
+
 };
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
+
     case INCREMENT:
-    console.log("-------------------");
-    console.log("INCREMENT is called");
-    console.log("-------------------");
-      return {...state, points: action.payload };
+      console.log("-------------------");
+      console.log("INCREMENT is called");
+      console.log("-------------------");
+      return {...state, cigSmoked: action.payload };
+
     case DECREMENT:
       console.log("-------------------");
       console.log("DECREMENT is called");
       console.log("-------------------");
-      return {...state, points: action.payload };
+      return {...state, cigLeft: action.payload };
+
+    case RESET:
+      console.log("-------------------");
+      console.log("--RESET is called--");
+      console.log("-------------------");
+      return {...state, cigLeft: 20, cigSmoked: 0, cigSmokedTotal: action.payload };
+
     default:
       return state;
   }

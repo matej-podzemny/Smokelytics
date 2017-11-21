@@ -12,6 +12,98 @@ export default StyleSheet.create({
       //justifyContent: 'flex-start',
   },
 
+  row: {
+    flexDirection: 'row',
+    position: 'absolute',
+    backgroundColor: 'rgba(0,0,0,0)',
+    justifyContent: 'space-between',
+    left: SCREEN_WIDTH * 0.088,
+    right: SCREEN_WIDTH * 0.088,
+  },
+
+  firstRow: {
+    flexDirection: 'row',
+    position: 'absolute',
+    backgroundColor: 'rgba(0,0,0,0)',
+    justifyContent: 'space-between',
+    left: SCREEN_WIDTH * 0.088,
+    right: SCREEN_WIDTH * 0.088,
+
+  },
+
+  secondRow: {
+    flexDirection: 'row',
+    position: 'absolute',
+    justifyContent: 'space-between',
+    bottom: 0,
+    backgroundColor: 'rgba(0,0,0,0)',
+    left: SCREEN_WIDTH * 0.088,
+    right: SCREEN_WIDTH * 0.088,
+
+  },
+
+
+
+  cigarette: {
+    //bottom: SCREEN_HEIGHT * 0.0382309,
+    //backgroundColor: 'blue',
+    width: SCREEN_WIDTH * 0.0746667,
+  },
+
+  packageButton: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    //backgroundColor: 'blue',
+  position: 'absolute',
+  backgroundColor: '#404040',
+  height: SCREEN_HEIGHT * 0.131,
+  borderRadius: 25,
+  width: SCREEN_WIDTH * 0.886,
+  bottom: SCREEN_HEIGHT * 0.132684,
+  },
+
+  packageImage: {
+    width: SCREEN_WIDTH * 0.0986667,
+
+  },
+
+  packageText: {
+    textAlign: 'center',
+    fontFamily: 'nunito-bold',
+    color: '#ffffff',
+    fontSize: 22,
+  },
+
+  countImage: {
+    width: SCREEN_WIDTH * 0.116,
+  },
+
+  countText: {
+    textAlign: 'center',
+    fontFamily: 'nunito-bold',
+    color: '#4d4d4d',
+    fontSize: 22,
+  },
+
+  countButton: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    //backgroundColor: 'blue',
+  position: 'absolute',
+  backgroundColor: '#ffffff',
+  height: SCREEN_HEIGHT * 0.131,
+  borderRadius: 25,
+  width: SCREEN_WIDTH * 0.886,
+
+
+  },
+
+  resetButton: {
+
+  },
+
   button: {
     position: 'absolute',
     backgroundColor: '#ffffff',
@@ -52,6 +144,7 @@ export default StyleSheet.create({
 
   bottomContent: {
       backgroundColor: '#dcdcdc',
+
       flex: 1,
       flexDirection: 'row',
       justifyContent: 'center',
