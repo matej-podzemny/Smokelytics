@@ -23,33 +23,28 @@ class BottomContent extends Component {
     return (
       <View style={styles.bottomContent}>
         <View style={styles.row}>
-
-          <Cigarette id="1"/>
-
-          <Cigarette id="2"/>
-          <Cigarette id="3"/>
+          <Cigarette id="13"/>
           <Cigarette id="4"/>
-          <Cigarette id="5"/>
-          <Cigarette id="6"/>
-          <Cigarette id="7"/>
-          <Cigarette id="8"/>
+          <Cigarette id="18"/>
           <Cigarette id="9"/>
-          <Cigarette id="10"/>
-
+          <Cigarette id="15"/>
+          <Cigarette id="1"/>
+          <Cigarette id="12"/>
+          <Cigarette id="8"/>
+          <Cigarette id="3"/>
+          <Cigarette id="19"/>
         </View>
         <View style={[styles.row, { bottom: 0 }]}>
-          <Cigarette id="11"/>
-          <Cigarette id="12"/>
-          <Cigarette id="13"/>
-          <Cigarette id="14"/>
-          <Cigarette id="15"/>
-          <Cigarette id="16"/>
-          <Cigarette id="17"/>
-          <Cigarette id="18"/>
-          <Cigarette id="19"/>
+          <Cigarette id="7"/>
           <Cigarette id="20"/>
-
-
+          <Cigarette id="14"/>
+          <Cigarette id="2"/>
+          <Cigarette id="10"/>
+          <Cigarette id="17"/>
+          <Cigarette id="6"/>
+          <Cigarette id="16"/>
+          <Cigarette id="5"/>
+          <Cigarette id="11"/>
         </View>
       </View>
     );

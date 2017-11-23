@@ -1,4 +1,4 @@
-import { INCREMENT, DECREMENT, RESET } from './types';
+import { INCREMENT, DECREMENT, RESET, MODAL } from './types';
 
 export function onIncrement(cigSmoked) {
   const total = cigSmoked + 1;
@@ -13,6 +13,14 @@ export function onDecrement(cigLeft) {
   return {
     type: DECREMENT,
     payload: total
+  }
+}
+
+export function onModalVisible(bool) {
+  const show = bool;
+  return {
+    type: MODAL,
+    payload: show
   }
 }
 

@@ -8,20 +8,16 @@ import {
     StyleSheet,
     Image,
     StatusBar,
-    Dimensions
+    Dimensions,
+    LayoutAnimation,
 } from 'react-native';
 import styles from '../helpers/Styles';
 import { connect } from 'react-redux';
-//import {onIncrement, onDecrement} from './actions';
-
+import { onModalVisible } from '../actions';
 
 
 class Header extends Component {
 
-  launchModal(bool) {
-      console.log("ShowModalPressed");
-      //this.setState({modalVisible: bool})
-  }
 
   render() {
     return (
@@ -29,7 +25,9 @@ class Header extends Component {
 
       <View style={styles.headerButton}>
         <TouchableOpacity onPress={() => {
-            this.launchModal(false)
+            //this.launchModal(false)
+            this.props.onModalVisible(true);
+
           }} style={{
             flexDirection: 'row'
           }}>
@@ -55,4 +53,6 @@ const mapStateToProps = ({counter}) => {
   return {cigSmoked, cigLeft};
 };
 
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps, {
+  onModalVisible,
+})(Header);

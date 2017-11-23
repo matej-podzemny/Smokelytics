@@ -19,7 +19,15 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
     left: SCREEN_WIDTH * 0.088,
     right: SCREEN_WIDTH * 0.088,
+    bottom: SCREEN_HEIGHT * 0.129655
+
   },
+
+  contentWrap: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+},
 
   firstRow: {
     flexDirection: 'row',
@@ -140,6 +148,7 @@ export default StyleSheet.create({
       flexDirection: 'row',
       justifyContent: 'space-around',
       alignItems: 'center',
+
   },
 
   bottomContent: {
@@ -157,12 +166,15 @@ export default StyleSheet.create({
     left: SCREEN_WIDTH * 0.05,
     //backgroundColor: 'blue',
     alignItems: 'center',
+      bottom: SCREEN_HEIGHT * 0.04042
   },
 
   rightContent: {
     flex: 1,
     alignItems: 'center',
     right: SCREEN_WIDTH * 0.05,
+    bottom: SCREEN_HEIGHT * 0.04042
+
 
     //backgroundColor: 'brown',
   },
