@@ -1,13 +1,9 @@
 import { INCREMENT, DECREMENT, RESET, MODAL } from '../actions/types';
 
 const INITIAL_STATE = {
-  cigSmokedTotal: 0,
   cigSmoked: 0,
   cigLeft: 20,
   modalVisible: false,
-  daily: 12,
-  weekly: 47,
-  monthly: 285,
   total: 562,
 };
 
@@ -26,10 +22,7 @@ export default (state = INITIAL_STATE, action) => {
       console.log("-------------------");
       return {...state,
         cigSmoked: action.payload,
-        daily: state.daily + action.payload,
-        weekly: state.weekly +  action.payload,
-        monthly: state.monthly +  action.payload,
-        total: state.total +  action.payload,
+        total: state.total +  1,
       };
 
     case DECREMENT:

@@ -1,28 +1,15 @@
-import React, {Component} from 'react';
-import {
-  Text,
-  View,
-  Image,
-} from 'react-native';
-import styles from '../helpers/Styles';
-import {connect} from 'react-redux';
+import React from 'react';
+import { View } from 'react-native';
+
+import styles from '../styles';
+const { pack, row } = styles;
+
 import Cigarette from './Cigarette';
 
 
-class BottomContent extends Component {
-
-// source={require('../../assets/img/cig_filled.png')}
-
-
-
-  render() {
-
-
-
-
-    return (
-      <View style={styles.bottomContent}>
-        <View style={styles.row}>
+const Package = () => (
+      <View style={pack}>
+        <View style={row}>
           <Cigarette id="13"/>
           <Cigarette id="4"/>
           <Cigarette id="18"/>
@@ -34,7 +21,7 @@ class BottomContent extends Component {
           <Cigarette id="3"/>
           <Cigarette id="19"/>
         </View>
-        <View style={[styles.row, { bottom: 0 }]}>
+        <View style={[row, { bottom: 0 }]}>
           <Cigarette id="7"/>
           <Cigarette id="20"/>
           <Cigarette id="14"/>
@@ -48,15 +35,5 @@ class BottomContent extends Component {
         </View>
       </View>
     );
-  }
-}
 
-
-
-const mapStateToProps = ({counter}) => {
-  const {cigSmoked, cigLeft} = counter;
-
-  return {cigSmoked, cigLeft};
-};
-
-export default connect(mapStateToProps)(BottomContent);
+export default Package;

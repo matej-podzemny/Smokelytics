@@ -1,42 +1,27 @@
 import React, {Component} from 'react';
-import {
-    View,
-    Modal,
-    Text,
-    TouchableOpacity,
-    TouchableHighlight,
-    StyleSheet,
-    Image,
-    StatusBar,
-    Dimensions,
-    LayoutAnimation,
-} from 'react-native';
-import styles from '../helpers/Styles';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { connect } from 'react-redux';
+
+import { stats } from "../../assets/img";
 import { onModalVisible } from '../actions';
+import styles from '../styles';
+const { header, headerButton } = styles;
 
 
 class Header extends Component {
-
-
   render() {
     return (
-      <View style={styles.header}>
-
-      <View style={styles.headerButton}>
-        <TouchableOpacity onPress={() => {
-            //this.launchModal(false)
+      <View style={header}>
+        <View style={headerButton}>
+          <TouchableOpacity onPress={() => {
             this.props.onModalVisible(true);
-
-          }} style={{
-            flexDirection: 'row'
-          }}>
-          <Text style={{
+          }} style={{ flexDirection: 'row' }}>
+            <Text style={{
               fontFamily: 'nunito-bold',
               color: 'white',
               paddingRight: 10
             }}>Stats</Text>
-          <Image source={require('../../assets/img/stats.png')} style={{
+            <Image source={stats} style={{
               height: 16,
               width: 16
             }}/>

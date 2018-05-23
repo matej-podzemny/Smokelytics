@@ -1,40 +1,17 @@
-import React, {Component} from 'react';
-import {
-  Text,
-  View,
-  Image,
-} from 'react-native';
-import styles from '../helpers/Styles';
-import {connect} from 'react-redux';
+import React from 'react';
+import { Image } from 'react-native';
+import { connect } from 'react-redux';
+
+import { cig_filled, cig_outline } from "../../assets/img";
 
 
-class Cigarette extends Component {
-
-  render() {
-
-    if (this.props.id > this.props.cigLeft) {
-      return (
-          <Image
-            source={require('../../assets/img/cig_outline.png')}
-            resizeMode={Image.resizeMode.contain}
-            style={styles.cigarette}
-          />
-        );
-    } else {
-      return (
-          <Image
-            source={require('../../assets/img/cig_filled.png')}
-            resizeMode={Image.resizeMode.contain}
-            style={styles.cigarette}
-          />
-        );
-
-    }
-
-  }
-}
-
-
+const Cigarette = ({id, cigLeft}) => (
+      <Image
+          source={id > cigLeft ? cig_outline : cig_filled}
+          resizeMode={Image.resizeMode.contain}
+          style={{flex: 1, margin: 1}}
+      />
+  );
 
 const mapStateToProps = ({counter}) => {
   const {cigLeft} = counter;

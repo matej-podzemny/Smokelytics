@@ -1,20 +1,11 @@
 import React, {Component} from 'react';
-import {
-  Text,
-  View,
-  TouchableOpacity,
-  Image,
-} from 'react-native';
-import styles from '../helpers/Styles';
-import { SCREEN_HEIGHT, SCREEN_WIDTH } from '../helpers/Styles';
+import { Text, View, TouchableOpacity, Image } from 'react-native';
 import {connect} from 'react-redux';
+
 import {onIncrement, onDecrement} from '../actions';
 
 
-
-
 class Button extends Component {
-
   render() {
     return (
       <View
@@ -24,7 +15,6 @@ class Button extends Component {
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-
         <TouchableOpacity
           onPress={this.props.onPress}
           activeOpacity={0.9}
@@ -44,15 +34,4 @@ class Button extends Component {
   }
 }
 
-
-
-const mapStateToProps = ({counter}) => {
-  const {cigSmoke, cigLeft} = counter;
-
-  return {cigSmoke, cigLeft};
-};
-
-export default connect(mapStateToProps, {
-  onIncrement,
-  onDecrement,
-})(Button);
+export default Button;
